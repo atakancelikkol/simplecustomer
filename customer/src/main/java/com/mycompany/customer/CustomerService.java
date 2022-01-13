@@ -1,8 +1,8 @@
 package com.mycompany.customer;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public record CustomerService(CustomerRepository customerRepository) {
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -13,6 +13,6 @@ public record CustomerService(CustomerRepository customerRepository) {
         //todo check if email valid
         //todo check if email not taken
         //todo store customer in db     OK
-        //customerRepository.save(customer);
+        customerRepository.save(customer);
     }
 }
