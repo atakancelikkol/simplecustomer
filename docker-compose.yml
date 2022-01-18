@@ -28,17 +28,14 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-
+    
 
 networks:
   postgres:
-    driver: bridge
-  shipment:
     driver: bridge
   spring:
     driver: bridge
 
 volumes:
   postgres:
-  shipment:
   pgadmin:
